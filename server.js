@@ -35,7 +35,7 @@ app.get('/sendtogetresponse',(req,res)=>{
 
   res.send('ok');
   if(req.query.name && req.query.email){
-  $api.addContact('4h3tr', req.query.name,req.query.email, null, 1, {},function(r){console.log(r);});
+  $api.addContact('4h3tr', req.query.name,req.query.email, null, 1, {phone:req.query.phone},function(r){console.log(r);});
 }
 
 
