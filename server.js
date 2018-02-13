@@ -45,6 +45,25 @@ app.get('/sendtogetresponse',(req,res)=>{
 
 
 
+app.get('/sendtogetresponseinstall',(req,res)=>{
+  console.log(process.env.apikey);
+  var $apiKey = process.env.apikey || '20e316816c6e9457ee2c67ba59684e78';
+  var $apiUrl = 'https://api2.getresponse.com';
+  var $api = new getResponse($apiKey,$apiUrl);
+  console.log('instance started')
+
+  res.send('ok');
+  if(req.query.name && req.query.email){
+      console.log(req.query);
+  $api.addContact('407er', req.query.name,req.query.email, null, 1, {phone:req.query.phone},function(r){console.log(r);});
+}
+
+
+
+});
+
+
+
 
 
 
