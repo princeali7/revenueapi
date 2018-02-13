@@ -50,7 +50,7 @@ app.get('/sendtogetresponseinstall',(req,res)=>{
   var $apiKey = process.env.apikey || '20e316816c6e9457ee2c67ba59684e78';
   var $apiUrl = 'https://api2.getresponse.com';
   var $api = new getResponse($apiKey,$apiUrl);
-  console.log('instance started')
+  console.log('insatelled hook instance started')
 
   res.send('ok');
   if(req.query.name && req.query.email){
